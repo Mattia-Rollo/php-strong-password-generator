@@ -9,14 +9,22 @@ if (isset($_GET['passLength'])) {
 }
 $lettere = 'abcdefghilmnopqrstuvz';
 $numeri = '1234567890';
-$simboli = '@%$!*#§';
+$simboli = '@%$!*#';
 
 
+$password = '';
 if (isset($_GET['options']) && isset($_GET['passLength'])) {
-    $password = '';
-    for ($i = 0; $i < $_GET['passLength']; $i++) {
-        $numRand = rand(1, strlen($lettere));
-        $password .= substr($lettere, $numRand, 1);
+    while (strlen($password) < intval($_GET['passLength'])) {
+        if (in_array('lettere', $_GET['options'])) {
+            $numRand = rand(1, strlen($lettere));
+            $password .= substr($lettere, $numRand, 1);
+        }
+        // $numRand = rand(1, strlen($lettere));
+        // $password .= substr(strtoupper($lettere), $numRand, 1);
+        $numRand = rand(1, strlen($numeri));
+        $password .= substr($numeri, $numRand, 1);
+        $numRand = rand(1, strlen($simboli));
+        $password .= substr($simboli, $numRand, 1);
 
     }
     echo $password;
@@ -32,7 +40,8 @@ if (isset($_GET['options']) && isset($_GET['passLength'])) {
                     <div class="mb-3 row">
                         <label for="password-length" class="col-sm-6 col-form-label">Lunghezza Password</label>
                         <div class="col-sm-6">
-                            <input type="number" class="form-control" id="password-length" name="passLength">
+                            <input type="number" class="form-control" id="password-length" name="passLength" min="0"
+                                oninput="validity.valid||(value='');">
                         </div>
                     </div>
                     <div class="form-check">

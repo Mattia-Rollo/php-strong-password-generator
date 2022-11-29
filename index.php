@@ -41,7 +41,8 @@ $password = '';
                         <label for="password-length" class="col-sm-6 col-form-label fw-bold">Lunghezza Password</label>
                         <div class="col-sm-6">
                             <input type="number" class="form-control" id="password-length" name="passLength" min="0"
-                                value="<?php echo $_POST['passLength'] ?? '' ?>" oninput="validity.valid||(value='');">
+                                max="16" value="<?php echo $_POST['passLength'] ?? '' ?>"
+                                oninput="validity.valid||(value='');">
                         </div>
                     </div>
                     <div class="repeat-radio py-3 row">
@@ -117,8 +118,8 @@ $password = '';
                     <!--###### bottoni e password Generata ########-->
                     <div class="row">
                         <div class="py-3 col-sm-6">
-                            <button type="submit" class="btn btn-primary">invia</button>
-                            <button type="reset" class="btn btn-secondary"
+                            <button type="submit" class="btn btn-outline-primary">invia</button>
+                            <button type="reset" class="btn btn-outline-secondary"
                                 onclick=" window.location = 'index.php'">resetta</button>
                         </div>
 

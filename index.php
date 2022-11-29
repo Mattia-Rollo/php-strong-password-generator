@@ -7,6 +7,9 @@ if (isset($_GET['options'])) {
 if (isset($_GET['passLength'])) {
     var_dump($_GET['passLength']);
 }
+if (isset($_GET['repeat'])) {
+    var_dump($_GET['repeat']);
+}
 $lettere = 'abcdefghilmnopqrstuvz';
 $numeri = '1234567890';
 $simboli = '@%$!*#';
@@ -26,7 +29,7 @@ if (isset($_GET['options']) && isset($_GET['passLength'])) {
         if (in_array('numeri', $_GET['options'])) {
             $numRand = rand(1, strlen($numeri));
             $numFromString = substr($numeri, $numRand, 1);
-            if (str_contains($password, $numFromString)) {
+            if (str_contains($password, $numFromString) && ($_GET['repeat'] == 'false')) {
             } else {
                 $password .= $numFromString;
             }
@@ -81,15 +84,22 @@ if (isset($_GET['options']) && isset($_GET['passLength'])) {
                             Simboli
                         </label>
                     </div>
+
                     <div class="py-3 ">
                         <button type="submit" class="btn btn-primary">invia</button>
                         <button type="reset" class="btn btn-primary">resetta</button>
                     </div>
-                </form>
+
             </div>
             <div class="col">
-                ciao
+                <select class="form-select" name="repeat">
+                    <option selected>Scegli</option>
+                    <option value="false">No repeat Number</option>
+                    <option value="true">Reapet Number</option>
+
+                </select>
             </div>
+            </form>
         </div>
 
     </div>

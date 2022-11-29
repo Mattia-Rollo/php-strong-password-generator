@@ -12,6 +12,7 @@ include __DIR__ . '/partials/header.php';
             <h2 class="text-center text-danger " style=" word-break: break-all; cursor: text;">
                 <?php echo $_SESSION['password'] ?>
             </h2>
+            <a href="" onclick="">indietro</a>
         </div>
     </div>
 </body>

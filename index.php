@@ -38,14 +38,14 @@ $password = '';
             <div class="row">
                 <div class="col">
                     <div class="pb-3 row">
-                        <label for="password-length" class="col-sm-6 col-form-label">Lunghezza Password</label>
+                        <label for="password-length" class="col-sm-6 col-form-label fw-bold">Lunghezza Password</label>
                         <div class="col-sm-6">
                             <input type="number" class="form-control" id="password-length" name="passLength" min="0"
                                 value="<?php echo $_POST['passLength'] ?? '' ?>" oninput="validity.valid||(value='');">
                         </div>
                     </div>
                     <div class="repeat-radio py-3 row">
-                        <span class="col-sm-6">Consenti la ripetizione di caratteri?</span>
+                        <span class="col-sm-6 fw-bold">Consenti la ripetizione di caratteri?</span>
                         <span class="col-sm-6">
                             <input type="radio" class="btn-check" name="repeat" id="success-outlined" checked
                                 value="true">
@@ -61,8 +61,10 @@ $password = '';
 
 
                     <div class="checkbox py-3 row">
+
+                        <!-- lato sinistro -->
                         <div class="col-sm-6">
-                            opzioni:
+                            <span class="fw-bold">Opzioni:</span>
                             <div>Lettere:
                                 <?php echo $lettere ?>
                             </div>
@@ -73,6 +75,8 @@ $password = '';
                                 <?php echo $simboli ?>
                             </div>
                         </div>
+
+                        <!-- lato destro -->
                         <div class="col-sm-6">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="lettere" name="options[]"
@@ -103,6 +107,8 @@ $password = '';
                                 </label>
                             </div>
                         </div>
+
+
                     </div>
 
 

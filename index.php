@@ -11,10 +11,15 @@ $lettere = 'abcdefghilmnopqrstuvz';
 $numeri = '1234567890';
 $simboli = '@%$!*#§';
 
-$password;
 
-if(isset($_GET['options']) && isset($_GET['passLength'])){
-    $numRand =  
+if (isset($_GET['options']) && isset($_GET['passLength'])) {
+    $password = '';
+    for ($i = 0; $i < $_GET['passLength']; $i++) {
+        $numRand = rand(1, strlen($lettere));
+        $password .= substr($lettere, $numRand, 1);
+
+    }
+    echo $password;
 }
 
 ?>
@@ -31,28 +36,29 @@ if(isset($_GET['options']) && isset($_GET['passLength'])){
                         </div>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Lettere" name="options[]"
-                            id="Lettere-Maiuscole">
+                        <input class="form-check-input" type="checkbox" value="lettere" name="options[]"
+                            id="Lettere-Maiuscole" checked>
                         <label class="form-check-label" for="Lettere-Maiuscole">
                             Lettere
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="Lettere-Maiuscole" value="LettereMaiuscole"
-                            name="options[]">
+                        <input class="form-check-input" type="checkbox" id="Lettere-Maiuscole" value="lettereMaiuscole"
+                            name="options[]" checked>
                         <label class="form-check-label" for="Lettere-Maiuscole">
                             Lettere Maiuscole
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="options[]" value="Numeri" id="Numeri">
+                        <input class="form-check-input" type="checkbox" name="options[]" value="numeri" id="Numeri"
+                            checked>
                         <label class="form-check-label" for="Numeri">
                             Numeri
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="LettereGrandi" name="options[]"
-                            value="Simboli" id="Simboli">
+                        <input class="form-check-input" type="checkbox" name="options[]" value="simboli" id="Simboli"
+                            checked>
                         <label class="form-check-label" for="Simboli">
                             Simboli
                         </label>

@@ -52,6 +52,12 @@ if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
                             <label class="btn btn-outline-danger" for="danger-outlined">No</label>
                         </span>
                     </div>
+
+
+                    <!-- sezione checkbox per scegliere tra numeri lettere e simboli -->
+
+
+
                     <div class="checkbox py-3 row">
                         <div class="col-sm-6">
                             opzioni:
@@ -64,8 +70,6 @@ if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
                             <div>Simboli:
                                 <?php echo $simboli ?>
                             </div>
-
-
                         </div>
                         <div class="col-sm-6">
                             <div class="form-check">
@@ -99,15 +103,16 @@ if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
                         </div>
                     </div>
 
-                    <!-- input for reapet characters -->
 
 
-                    <!--###### bottoni ########-->
+
+                    <!--###### bottoni e password Generata ########-->
                     <div class="row">
                         <div class="py-3 col-sm-6">
                             <button type="submit" class="btn btn-primary">invia</button>
                             <button type="reset" class="btn btn-secondary">resetta</button>
                         </div>
+
                         <div class="py-3 col-sm-6">
                             <div>Password Generata:</div>
                             <div>
@@ -117,14 +122,13 @@ if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
                             </div>
                         </div>
                     </div>
-
-                    <!-- </div>
-                <div class="col"> -->
                 </div>
             </div>
-
         </div>
     </form>
+
+
+
 </body>
 
 </html>

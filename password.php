@@ -7,9 +7,9 @@ include __DIR__ . '/partials/header.php';
 
 <body>
     <div class="wrapper">
-        <div class="container" id="password">
+        <div class="container rounded shadow-lg" id="password">
             <h1 class="text-center">La tua nuova password è</h1>
-            <h2 class="text-center text-danger ">
+            <h2 class="text-center text-danger " style=" word-break: break-all; cursor: text;">
                 <?php echo $_SESSION['password'] ?>
             </h2>
         </div>

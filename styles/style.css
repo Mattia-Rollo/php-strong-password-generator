@@ -8,7 +8,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: rgb(140, 140, 140);
+    background-color: rgb(159, 159, 159);
     max-width: 600px;
     
 }

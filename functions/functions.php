@@ -36,8 +36,8 @@
 
 function passwordGen2($password, $options, $passLength, $repeat)
 {
-    $lettere = 'abcde'; //fghilmnopqrstuvz
-    $numeri = '123'; //4567890
+    $lettere = 'abcdefghilmnopqrstuvz'; //fghilmnopqrstuvz
+    $numeri = '1234567890'; //4567890
     $simboli = '@%$!*#';
     $stringAllInOne = '';
     if (isset($options) && isset($passLength)) {
@@ -56,7 +56,7 @@ function passwordGen2($password, $options, $passLength, $repeat)
 
 
         while (strlen($password) < intval($passLength)) {
-            $numRand = rand(1, strlen($stringAllInOne));
+            $numRand = rand(0, strlen($stringAllInOne));
             $character = substr($stringAllInOne, $numRand, 1);
             if (str_contains($password, $character) && ($repeat == 'false')) {
             } else {

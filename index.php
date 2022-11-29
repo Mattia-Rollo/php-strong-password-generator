@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include __DIR__ . '/partials/header.php';
 include __DIR__ . '/functions/functions.php';
 
@@ -103,9 +103,19 @@ if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
 
 
                     <!--###### bottoni ########-->
-                    <div class="py-3 ">
-                        <button type="submit" class="btn btn-primary">invia</button>
-                        <button type="reset" class="btn btn-secondary">resetta</button>
+                    <div class="row">
+                        <div class="py-3 col-sm-6">
+                            <button type="submit" class="btn btn-primary">invia</button>
+                            <button type="reset" class="btn btn-secondary">resetta</button>
+                        </div>
+                        <div class="py-3 col-sm-6">
+                            <div>Password Generata:</div>
+                            <div>
+                                <?php if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
+                                    echo passwordGen2($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']);
+                                } ?>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- </div>

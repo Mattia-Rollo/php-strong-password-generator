@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_destroy();
+
 include __DIR__ . '/partials/header.php';
 include __DIR__ . '/functions/functions.php';
 
@@ -19,7 +19,7 @@ include __DIR__ . '/functions/functions.php';
 
 $lettere = 'abcdefghilmnopqrstuvz'; //fghilmnopqrstuvz
 $numeri = '1234567890'; //4567890
-$simboli = '@%$!*#';
+$simboli = '@%$!*#£';
 $stringAllInOne = '';
 
 $password = '';
@@ -118,7 +118,7 @@ $password = '';
 
                         <div class="py-3 col-sm-6">
                             <div>Password Generata:</div>
-                            <?php if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) { ?>
+                            <?php if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat']) && (intval($_POST['passLength']) > 0)) { ?>
                             <div class="bg-light rounded p-1 " style=" word-break: break-all; cursor: text;">
                                 <?php echo passwordGen2($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']); ?>
 

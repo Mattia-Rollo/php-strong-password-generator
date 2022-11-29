@@ -38,7 +38,9 @@ $password = '';
             <div class="row">
                 <div class="col">
                     <div class="pb-3 row">
-                        <label for="password-length" class="col-sm-6 col-form-label fw-bold">Lunghezza Password</label>
+                        <label for="password-length" class="col-sm-6 col-form-label fw-bold">Lunghezza Password
+                            <div>Max: 16 caratteri</div>
+                        </label>
                         <div class="col-sm-6">
                             <input type="number" class="form-control" id="password-length" name="passLength" min="0"
                                 max="16" value="<?php echo $_POST['passLength'] ?? '' ?>"

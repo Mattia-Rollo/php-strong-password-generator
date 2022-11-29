@@ -1,8 +1,8 @@
-body {
+/* body {
     background: url('../desktop-1920x1080.jpg');
     background-size: cover;
-    /* background-position: 200px 0; */
-}
+    
+} */
 
 
 .container {
@@ -35,3 +35,12 @@ a{
 a:hover{
     text-decoration: underline;
 }
+#myVideo {
+    position: fixed;
+    
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 110%;
+    /* z-index: 1; */
+  }

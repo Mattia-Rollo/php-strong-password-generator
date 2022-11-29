@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://images7.alphacoders.com/519/519779.jpg');
+    background: url('../desktop-1920x1080.jpg');
     background-size: cover;
     /* background-position: 200px 0; */
 }
@@ -23,6 +23,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/* .wrapper-index{
+    background: url('../images/desktop-1920x1080.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+} */
 a{
     text-decoration: none;
 }

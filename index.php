@@ -19,13 +19,22 @@ if (isset($_GET['options']) && isset($_GET['passLength'])) {
             $numRand = rand(1, strlen($lettere));
             $password .= substr($lettere, $numRand, 1);
         }
-        // $numRand = rand(1, strlen($lettere));
-        // $password .= substr(strtoupper($lettere), $numRand, 1);
-        $numRand = rand(1, strlen($numeri));
-        $password .= substr($numeri, $numRand, 1);
-        $numRand = rand(1, strlen($simboli));
-        $password .= substr($simboli, $numRand, 1);
-
+        if (in_array('lettereMaiuscole', $_GET['options'])) {
+            $numRand = rand(1, strlen($lettere));
+            $password .= substr(strtoupper($lettere), $numRand, 1);
+        }
+        if (in_array('numeri', $_GET['options'])) {
+            $numRand = rand(1, strlen($numeri));
+            $numFromString = substr($numeri, $numRand, 1);
+            if (str_contains($password, $numFromString)) {
+            } else {
+                $password .= $numFromString;
+            }
+        }
+        if (in_array('simboli', $_GET['options'])) {
+            $numRand = rand(1, strlen($simboli));
+            $password .= substr($simboli, $numRand, 1);
+        }
     }
     echo $password;
 }

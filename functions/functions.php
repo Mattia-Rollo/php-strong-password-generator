@@ -64,6 +64,9 @@ function passwordGen2($password, $options, $passLength, $repeat)
 
             }
         }
+        session_start();
+        $_SESSION['password'] = $password;
+        header('Location: ./password.php ');
     }
     return $password;
 }

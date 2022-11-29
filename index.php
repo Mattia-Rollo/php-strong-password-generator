@@ -1,23 +1,24 @@
 <?php
-// session_start();
+session_start();
+session_destroy();
 include __DIR__ . '/partials/header.php';
 include __DIR__ . '/functions/functions.php';
 
-if (isset($_POST['options'])) {
-    var_dump($_POST['options']);
-}
-if (isset($_POST['passLength'])) {
-    var_dump($_POST['passLength']);
-}
-if (isset($_POST['repeat'])) {
-    var_dump($_POST['repeat']);
-}
+// if (isset($_POST['options'])) {
+//     var_dump($_POST['options']);
+// }
+// if (isset($_POST['passLength'])) {
+//     var_dump($_POST['passLength']);
+// }
+// if (isset($_POST['repeat'])) {
+//     var_dump($_POST['repeat']);
+// }
 // $lettere = 'abcdefghilmnopqrstuvz';
 // $numeri = '1234567890';
 // $simboli = '@%$!*#';
 
-$lettere = 'abcde'; //fghilmnopqrstuvz
-$numeri = '123'; //4567890
+$lettere = 'abcdefghilmnopqrstuvz'; //fghilmnopqrstuvz
+$numeri = '1234567890'; //4567890
 $simboli = '@%$!*#';
 $stringAllInOne = '';
 
@@ -25,21 +26,22 @@ $password = '';
 // if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
 //     echo passwordGen($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']);
 // }
-if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
-    echo passwordGen2($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']);
-}
+// if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
+//     echo passwordGen2($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']);
+// }
 ?>
 
 <body>
-    <form action="./index.php" method="POST">
-        <div class="container p-5 rounded shadow-lg">
+    <div class="container px-5 py-2 rounded shadow-lg">
+        <h1 class="text-center py-3">Password Generation</h1>
+        <form action="./index.php" method="POST">
             <div class="row">
                 <div class="col">
                     <div class="pb-3 row">
                         <label for="password-length" class="col-sm-6 col-form-label">Lunghezza Password</label>
                         <div class="col-sm-6">
                             <input type="number" class="form-control" id="password-length" name="passLength" min="0"
-                                oninput="validity.valid||(value='');">
+                                value="<?php echo $_POST['passLength'] ?? '' ?>" oninput="validity.valid||(value='');">
                         </div>
                     </div>
                     <div class="repeat-radio py-3 row">
@@ -110,22 +112,24 @@ if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
                     <div class="row">
                         <div class="py-3 col-sm-6">
                             <button type="submit" class="btn btn-primary">invia</button>
-                            <button type="reset" class="btn btn-secondary">resetta</button>
+                            <button type="reset" class="btn btn-secondary"
+                                onclick=" window.location = 'index.php'">resetta</button>
                         </div>
 
                         <div class="py-3 col-sm-6">
                             <div>Password Generata:</div>
-                            <div>
-                                <?php if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) {
-                                    echo passwordGen2($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']);
-                                } ?>
+                            <?php if (isset($_POST['options'], $_POST['passLength'], $_POST['repeat'])) { ?>
+                            <div class="bg-light rounded p-1 " style=" word-break: break-all; cursor: text;">
+                                <?php echo passwordGen2($password, $_POST['options'], $_POST['passLength'], $_POST['repeat']); ?>
+
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 
 
 

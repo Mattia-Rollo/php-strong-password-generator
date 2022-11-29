@@ -1,8 +1,14 @@
+body {
+    background-image: url('https://static.vecteezy.com/ti/vettori-gratis/p3/4086263-chiave-digitale-icona-chiave-elettronica-realizzata-con-codice-binario-sfondo-di-sicurezza-informatica-e-accesso-digitale-binario-dati-e-streaming-matrice-di-codice-digitale-sfondo-con-cifre-1-0-illustrazione-vettoriale.jpg');
+}
+
+
 .container {
-    /* position: absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%); */
-    background-color: rgb(88, 184, 96);
+    transform: translate(-50%,-50%);
+    background-color: rgb(140, 140, 140);
     max-width: 600px;
+    
 }

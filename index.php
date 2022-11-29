@@ -33,7 +33,7 @@ $password = '';
 
 <body>
     <!-- The video -->
-    <video autoplay controls loop id="myVideo">
+    <video autoplay muted controls loop id="myVideo">
         <source src="./transformers.mp4" type="video/mp4">
     </video>
 

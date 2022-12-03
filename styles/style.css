@@ -42,5 +42,5 @@ a:hover{
     bottom: 0;
     min-width: 100%;
     min-height: 110%;
-    /* z-index: 1; */
+    z-index: -10;
   }

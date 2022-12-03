@@ -33,11 +33,10 @@ $password = '';
 
 <body>
     <!-- The video -->
-    <video autoplay muted controls loop id="myVideo">
+    <!-- <video autoplay muted controls loop id="myVideo">
         <source src="./transformers.mp4" type="video/mp4">
-    </video>
+    </video> -->
 
-    <!-- Optional: some overlay text to describe the video -->
 
     <div class="container px-5 py-2 rounded shadow-lg">
         <h1 class="text-center py-3">Password Generation</h1>
